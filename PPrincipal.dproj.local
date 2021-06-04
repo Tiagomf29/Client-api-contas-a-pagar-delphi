@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2021/06/03 15:56:03.000.010,=C:\Users\Tiago\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/06/03 15:59:33.000.849,D:\Projetos GitHub\Contas-a-pagar-delphi\UFrmLogin.dfm=C:\Users\Tiago\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2021/06/03 15:59:33.000.849,D:\Projetos GitHub\Contas-a-pagar-delphi\UFrmLogin.pas=C:\Users\Tiago\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/06/03 15:59:43.000.998,D:\Projetos GitHub\Contas-a-pagar-delphi\PPrincipal.dproj=C:\Users\Tiago\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2021/06/03 16:01:13.000.712,=D:\Projetos GitHub\Contas-a-pagar-delphi\Unit1.pas</Transaction>
+    <Transaction>2021/06/03 16:04:03.000.605,D:\Projetos GitHub\Contas-a-pagar-delphi\UUser.pas=D:\Projetos GitHub\Contas-a-pagar-delphi\Unit1.pas</Transaction>
+    <Transaction>2021/06/03 16:11:48.000.212,=D:\Projetos GitHub\Contas-a-pagar-delphi\Unit1.pas</Transaction>
+    <Transaction>2021/06/03 16:17:39.000.860,D:\Projetos GitHub\Contas-a-pagar-delphi\UICrudUsuarioInterfaceaAPI.pas=D:\Projetos GitHub\Contas-a-pagar-delphi\Unit1.pas</Transaction>
+    <Transaction>2021/06/03 16:19:16.000.018,=D:\Projetos GitHub\Contas-a-pagar-delphi\Unit1.pas</Transaction>
+    <Transaction>2021/06/03 16:19:36.000.500,D:\Projetos GitHub\Contas-a-pagar-delphi\UConsomeApiUser.pas=D:\Projetos GitHub\Contas-a-pagar-delphi\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>

@@ -1,0 +1,113 @@
+unit UConsomeApiUser;
+
+interface
+uses
+  UUser, UICrudUsuarioInterfaceaAPI, Rest.Json, Rest.Response.Adapter, Rest.Client,
+  System.SysUtils, Vcl.Dialogs, System.Generics.Collections, Datasnap.DBClient;
+
+type
+
+  TConsomeApiUser = class(TInterfacedObject, TICrudUsuarioInterfaceaAPI<TUser>)
+
+  FRestClient : TRESTClient;
+  FRestResponse : TRESTResponse;
+  FRestRequest : TRESTRequest;
+  FRestResponseDataSetAdapter  : TRESTResponseDataSetAdapter;
+  FClientDataSet : TClientDataSet;
+
+  procedure carregaComponentesRest(AUrl : String);
+  function RecuperaClientDataSet():TClientDataSet;
+  private
+    procedure CarregaDbGrid;
+
+  public
+
+    function validaLoginByUserAndPassword(ALogin, ASenha : String): Boolean;
+    function insertUser(obj: TUser): Boolean;
+    function updateUser(obj: TUser): Boolean;
+    function deleteUser(obj: TUser): Boolean;
+
+    constructor Create();
+    destructor Destroy();
+
+  end;
+
+implementation
+
+{ TConsomeApiUser }
+
+uses UFrmLogin;
+
+procedure TConsomeApiUser.carregaComponentesRest(AUrl:String);
+begin
+  FRestClient.BaseURL                  := AUrl;
+  FRestRequest.Client                  := FRestClient;
+  FRestRequest.Response                := FRestResponse;
+  FRestResponseDataSetAdapter.Dataset  :=  FClientDataSet;
+  FRestResponseDataSetAdapter.Response := FRestResponse;
+end;
+
+procedure TConsomeApiUser.CarregaDbGrid;
+begin
+
+end;
+
+constructor TConsomeApiUser.Create;
+var
+  lListUser : TUser;
+
+begin
+  FRestClient                 := TRESTClient.Create(nil);
+  FRestResponse               := TRESTResponse.Create(nil);
+  FRestRequest                := TRESTRequest.Create(nil);
+  FRestResponseDataSetAdapter := TRESTResponseDataSetAdapter.Create(nil);
+  FClientDataSet              := TClientDataSet.Create(nil);
+  //
+  carregaComponentesRest('http://localhost:8080');
+end;
+
+function TConsomeApiUser.deleteUser(obj: TUser): Boolean;
+begin
+
+end;
+
+destructor TConsomeApiUser.Destroy;
+begin
+  FreeAndNil(FRestClient);
+  FreeAndNil(FRestResponse);
+  FreeAndNil(FRestRequest);
+  FreeAndNil(FRestResponseDataSetAdapter);
+  FreeAndNil(FClientDataSet);
+end;
+
+function TConsomeApiUser.insertUser(obj: TUser): Boolean;
+begin
+
+end;
+
+function TConsomeApiUser.RecuperaClientDataSet: TClientDataSet;
+begin
+  Result := FClientDataSet;
+end;
+
+function TConsomeApiUser.updateUser(obj: TUser): Boolean;
+begin
+
+end;
+
+function TConsomeApiUser.validaLoginByUserAndPassword(ALogin, ASenha : String): Boolean;
+begin
+
+  FRestRequest.Resource := '/user/login/'+ALogin+'/senha/'+ASenha;
+  FRestRequest.Execute;
+
+  if not StrToBool(FRestResponse.Content) then
+  begin
+    MessageDlg('Usuário ou senha incorreto. Verifique!',mtWarning,[mbOK],0);
+    Exit;
+  end
+  else
+    MessageDlg('OK Usuario e senha correto!',mtWarning,[mbOK],0);
+end;
+
+end.

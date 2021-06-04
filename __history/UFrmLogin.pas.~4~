@@ -1,0 +1,46 @@
+unit UFrmLogin;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons, REST.Types,
+  REST.Client, Data.Bind.Components, Data.Bind.ObjectScope, FireDAC.Stan.Intf,
+  FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
+  FireDAC.Phys.Intf, FireDAC.DApt.Intf, Data.DB, Vcl.Grids, Vcl.DBGrids,
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, REST.Response.Adapter,
+  Datasnap.DBClient;
+
+type
+  TfrmLogin = class(TForm)
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    BitBtn1: TBitBtn;
+    procedure BitBtn1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmLogin: TfrmLogin;
+
+implementation
+uses
+  UConsomeApiUser;
+
+{$R *.dfm}
+
+procedure TfrmLogin.BitBtn1Click(Sender: TObject);
+var
+  consomeApi : TConsomeApiUser;
+begin
+  consomeApi  := TConsomeApiUser.Create();
+  consomeApi.validaLoginByUserAndPassword(Edit1.Text,Edit2.Text);
+  DTS.DataSet := consomeApi.RecuperaClientDataSet();
+end;
+
+end.

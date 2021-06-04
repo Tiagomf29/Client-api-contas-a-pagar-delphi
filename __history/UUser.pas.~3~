@@ -1,0 +1,90 @@
+unit UUser;
+
+interface
+
+type
+
+  TUser = class
+
+  private
+    FCode     : Integer;
+    FFullName  : String;
+    FCpf      : Integer;
+    FLogin    : String;
+    FPassword : String;
+    function getCode: Integer;
+    function getCpf: Integer;
+    function getFullName: String;
+    function getLogin: String;
+    function getPassword: String;
+    procedure setCode(const Value: Integer);
+    procedure setCpf(const Value: Integer);
+    procedure setFullName(const Value: String);
+    procedure setLogin(const Value: String);
+    procedure setPassword(const Value: String);
+
+  public
+
+   property code : Integer read getCode write setCode;
+   property fullName : String read getFullName write setFullName;
+   property cpf : Integer read getCpf write setCpf;
+   property login : String read getLogin write setLogin;
+   property password : String read getPassword write setPassword;
+
+  end;
+
+implementation
+
+{ TUser }
+
+function TUser.getCode: Integer;
+begin
+  Result := FCode;
+end;
+
+function TUser.getCpf: Integer;
+begin
+  Result := FCpf;
+end;
+
+function TUser.getFullName: String;
+begin
+  Result := FFullName;
+end;
+
+function TUser.getLogin: String;
+begin
+  Result := FLogin;
+end;
+
+function TUser.getPassword: String;
+begin
+  Result := FPassword;
+end;
+
+procedure TUser.setCode(const Value: Integer);
+begin
+  FCode := Value;
+end;
+
+procedure TUser.setCpf(const Value: Integer);
+begin
+  FCpf := Value;
+end;
+
+procedure TUser.setFullName(const Value: String);
+begin
+  FFullName := Value;
+end;
+
+procedure TUser.setLogin(const Value: String);
+begin
+  FLogin := Value;
+end;
+
+procedure TUser.setPassword(const Value: String);
+begin
+  FPassword := Value;
+end;
+
+end.

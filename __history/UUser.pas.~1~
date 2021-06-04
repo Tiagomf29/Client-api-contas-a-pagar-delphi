@@ -1,0 +1,13 @@
+unit UUser;
+
+interface
+
+type
+
+  TUser = class
+
+  end;
+
+implementation
+
+end.

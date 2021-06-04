@@ -1,0 +1,114 @@
+object frmLogin: TfrmLogin
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
+  Caption = 'Login'
+  ClientHeight = 176
+  ClientWidth = 422
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 8
+    Top = 5
+    Width = 62
+    Height = 23
+    Caption = 'Usu'#225'rio'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 8
+    Top = 66
+    Width = 53
+    Height = 23
+    Caption = 'Senha'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Edit1: TEdit
+    Left = 8
+    Top = 27
+    Width = 225
+    Height = 31
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+  end
+  object Edit2: TEdit
+    Left = 8
+    Top = 90
+    Width = 225
+    Height = 31
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    PasswordChar = '*'
+    TabOrder = 1
+  end
+  object BitBtn1: TBitBtn
+    Left = 66
+    Top = 137
+    Width = 113
+    Height = 33
+    Caption = 'Entrar'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 2
+    OnClick = BitBtn1Click
+  end
+  object RESTClient1: TRESTClient
+    Accept = 'application/json, text/plain; q=0.9, text/html;q=0.8,'
+    AcceptCharset = 'utf-8, *;q=0.8'
+    BaseURL = 'http://localhost:8080'
+    Params = <>
+    RaiseExceptionOn500 = False
+    Left = 368
+    Top = 72
+  end
+  object RESTRequest1: TRESTRequest
+    Client = RESTClient1
+    Params = <
+      item
+        Name = 'all'
+        Value = 'all'
+      end>
+    Resource = 'user/all'
+    Response = RESTResponse1
+    SynchronizedEvents = False
+    Left = 288
+    Top = 80
+  end
+  object RESTResponse1: TRESTResponse
+    ContentType = 'application/json'
+    Left = 288
+    Top = 24
+  end
+end
