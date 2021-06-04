@@ -46,11 +46,7 @@ var
   consomeApi : TConsomeApiUser;
 begin
   consomeApi  := TConsomeApiUser.Create();
-  try
-    consomeApi.validaLoginByUserAndPassword(edtusuario.Text,edtSenha.Text);
-  finally
-    FreeAndNil(consomeApi);
-  end;
+  consomeApi.validaLoginByUserAndPassword(edtusuario.Text,edtSenha.Text);
 end;
 
 function TfrmLogin.validaCampos: Boolean;
