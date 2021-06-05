@@ -5,7 +5,7 @@
 <ul>
   <li>Para que o projeto funcione com sucesso é necessário deixar rodando a API Tiagomf29/Contas-a-pagar-api conforme orientação no readme do projeto.</li> <br />
   <li>Neste momento a única funcionalidade que está funcionando é o consumo da API validando o usuário e senha.</li><br/>
-  <li>O usuário válido conforme gravado em banco de dados é "TMF" e a senha válida conforme gravado em banco de dados é "123".</li>
+  <li>O usuário válido conforme gravado em banco de dados é "TMF" e a senha válida conforme gravado em banco de dados é "123".</li><br/>
   <li>Utilizado o Delphi 10.3.3 Community edition.</li>  
 </ul>
 
